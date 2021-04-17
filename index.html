@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Erin's Site</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body style="width:1920px; background-color:transparent;">
+<div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 left">
+                <img style="text-align: left" width="200" height="200" src='logo.png' />
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-sm-12">
+                <img style="height: 100%; width: 100%; object-fit: contain" id='image'src='17.png'/>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 center" style="position: relative;" id="stack" onclick=addimage(this)>
+            <img id="images" style="mix-blend-mode: multiply; margin-left:10%; margin-right:10%; margin-top:-50px; height: 768px; width: 1366px; position:absolute" id='image' src='1.png'/>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<script>
+    var clicked = 0;
+    function addimage(){
+        if(clicked%19==0 && clicked != 0){
+            document.getElementById("stack").innerHTML = `<img id="images" style="mix-blend-mode: multiply; margin-left:10%; margin-right:10%; margin-top:-50px; height: 768px; width: 1366px; position:absolute" id='image' src='${(clicked+1)%18+1}.png'/>`
+        }else{
+            document.getElementById("stack").innerHTML += `<img id="images" style="mix-blend-mode: multiply; margin-left:10%; margin-right:10%; margin-top:-50px; height: 768px; width: 1366px; position:absolute" id='image' src='${(clicked+1)%18+1}.png'/>`
+            console.log(document.getElementById("stack").innerHTML)
+        }
+        clicked++;
+    }
+</script>
